@@ -2,128 +2,15 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Segoe UI', sans-serif;
+  font-family: Arial, sans-serif;
 }
 
 body {
-  background: #0a0a0a;
   color: white;
+  background: black;
 }
 
-/* HERO */
-.hero {
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-
-.hero h1 {
-  font-size: 3.5rem;
-}
-
-.hero span {
-  color: #ff1a1a;
-}
-
-.hero p {
-  margin: 15px 0;
-  opacity: 0.8;
-}
-
-.buttons {
-  margin-top: 20px;
-}
-
-button {
-  padding: 12px 25px;
-  margin: 10px;
-  font-size: 16px;
-  border: none;
-  cursor: pointer;
-  background: #ff1a1a;
-  color: white;
-  transition: 0.3s;
-}
-
-button:hover {
-  transform: scale(1.05);
-  background: #e60000;
-}
-
-button.outline {
-  background: transparent;
-  border: 2px solid #ff1a1a;
-}
-
-/* ABOUT */
-.about {
-  padding: 80px 15%;
-  text-align: center;
-}
-
-.about h2 {
-  color: #ff1a1a;
-  margin-bottom: 20px;
-}
-
-/* PROJECTS */
-.projects {
-  padding: 80px 10%;
-}
-
-.projects h2 {
-  text-align: center;
-  color: #ff1a1a;
-  margin-bottom: 40px;
-}
-
-.project-card {
-  background: #141414;
-  padding: 25px;
-  margin-bottom: 20px;
-  border-left: 4px solid #ff1a1a;
-  transition: 0.3s;
-}
-
-.project-card:hover {
-  transform: translateX(10px);
-}
-
-.project-card a {
-  color: #ff1a1a;
-  text-decoration: none;
-}
-
-/* FOOTER */
-footer {
-  text-align: center;
-  padding: 20px;
-  background: #000;
-  opacity: 0.6;
-  }
-
-/* Normal button */
-#glowBtn {
-  padding: 12px 25px;
-  font-size: 16px;
-  background: #ff1a1a;
-  color: white;
-  border: none;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-/* Animation on click */
-#glowBtn.active {
-  box-shadow: 0 0 10px #ff1a1a,
-              0 0 20px #ff1a1a,
-              0 0 40px #ff1a1a;
-  transform: scale(1.2);
-}
-
+/* Background Video */
 #bgVideo {
   position: fixed;
   top: 0;
@@ -132,22 +19,14 @@ footer {
   height: 100%;
   object-fit: cover;
   z-index: -2;
-  }
+}
 
+/* Overlay */
 .overlay {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.75);
+  inset: 0;
+  background: rgba(0,0,0,0.75);
   z-index: -1;
-  }
-
-@media (max-width: 768px) {
-  #bgVideo {
-    display: block;   /* mobile me bhi allow */
-  }
 }
 
 /* HEADER */
@@ -156,7 +35,7 @@ footer {
   top: 0;
   width: 100%;
   height: 60px;
-  background: rgba(0,0,0,0.8);
+  background: rgba(0,0,0,0.85);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -166,63 +45,88 @@ footer {
 
 .menu-icon {
   font-size: 26px;
-  cursor: pointer;
   color: red;
+  cursor: pointer;
 }
 
-/* RIGHT MENU */
+/* Desktop menu */
 .nav-links a {
   margin-left: 20px;
   color: white;
   text-decoration: none;
-  font-size: 15px;
 }
 
 .nav-links a:hover {
   color: red;
 }
 
-/* MOBILE MENU */
-.mobile-menu {
+/* Slide Menu */
+.slide-menu {
   position: fixed;
   top: 60px;
   left: 0;
   width: 100%;
   background: black;
-  display: none;
-  flex-direction: column;
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 0.4s ease;
   z-index: 999;
-  animation: slideDown 0.3s ease;
 }
 
-.mobile-menu a {
+.slide-menu.open {
+  max-height: 300px;
+}
+
+.slide-menu a {
+  display: block;
   padding: 15px;
   color: white;
   text-decoration: none;
   border-bottom: 1px solid #222;
 }
 
-.mobile-menu a:hover {
+.slide-menu a:hover {
   background: red;
 }
 
-/* SECTIONS */
+/* Sections */
 .section {
-  height: 100vh;
-  padding-top: 80px;
+  min-height: 100vh;
+  padding-top: 100px;
   text-align: center;
-  font-size: 30px;
 }
 
-/* ANIMATION */
-@keyframes slideDown {
-  from { transform: translateY(-20px); opacity: 0; }
-  to { transform: translateY(0); opacity: 1; }
+.dark {
+  background: #0a0a0a;
 }
 
-/* RESPONSIVE */
+.hero h1 span {
+  color: red;
+}
+
+.hero p {
+  margin: 15px 0;
+  opacity: 0.8;
+}
+
+/* Button */
+#glowBtn {
+  padding: 12px 30px;
+  background: red;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#glowBtn.active {
+  transform: scale(1.2);
+  box-shadow: 0 0 10px red, 0 0 30px red;
+}
+
+/* Responsive */
 @media (max-width: 768px) {
   .nav-links {
     display: none;
   }
-}
+  }
