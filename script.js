@@ -5,7 +5,7 @@ function toggleMenuAndScroll() {
   menu.classList.toggle("open");
   if (menu.classList.contains("open")) {
     navLinks.style.display = 'none'; // Hide nav-links when menu opens
-    // Removed scrollIntoView to prevent jumping
+    window.scrollTo({ top: 0, behavior: 'smooth' }); // Scroll to top
   } else {
     navLinks.style.display = 'flex'; // Show nav-links when menu closes
   }
@@ -17,6 +17,15 @@ function closeMenu() {
   menu.classList.remove("open");
   navLinks.style.display = 'flex'; // Ensure nav-links are shown when closing
 }
+
+// Close menu when clicking outside
+document.addEventListener('click', function(event) {
+  const menu = document.getElementById("slideMenu");
+  const header = document.querySelector('.header');
+  if (!header.contains(event.target) && !menu.contains(event.target)) {
+    closeMenu();
+  }
+});
 
 /* Scroll buttons */
 function goToProjects() {
