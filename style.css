@@ -195,10 +195,12 @@ body {
 }
 
 h2 {
-  margin-bottom: 10px; /* h2 के नीचे कम जगह */
+  margin-bottom: 20px; /* Added gap after section headings */
 }
+
 h3 {
-  margin-top: 5px; /* h3 के ऊपर कम जगह */
+  margin-top: 15px; /* Gap between Projects and Bunny AI */
+  margin-bottom: 10px;
 }
 
 .project-background h3 {
