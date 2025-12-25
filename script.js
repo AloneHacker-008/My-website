@@ -1,13 +1,18 @@
 /* Menu */
-function toggleMenu() {
-  document.getElementById("slideMenu").classList.toggle("open");
+function toggleMenuAndScroll() {
+  const menu = document.getElementById("slideMenu");
+  menu.classList.toggle("open");
+
+  if (menu.classList.contains("open")) {
+    menu.scrollIntoView({ behavior: "smooth" });
+  }
 }
 
 function closeMenu() {
   document.getElementById("slideMenu").classList.remove("open");
 }
 
-/* Scroll */
+/* Scroll buttons */
 function goToProjects() {
   document.getElementById("projects").scrollIntoView({ behavior: "smooth" });
 }
