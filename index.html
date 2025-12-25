@@ -4,6 +4,10 @@
   <meta charset="UTF-8">
   <title>Anup Prasad | Portfolio</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -47,60 +51,61 @@
 
 <!-- PROJECTS -->
 <section id="projects" class="section">
-  <div class="project-box" onclick="collapseProject()">
-    <div class="project-background" id="projectBackground">
-      <h2>Projects</h2>
+  <h2 class="section-title">Projects</h2>
 
-      <h3>Bunny AI</h3>
-      <p class="project-short" id="projectShort">
-        Bunny AI is a Python-based intelligent assistant designed for automation, command execution, and cybersecurity experiments. It leverages advanced logic to provide smart responses and enhance productivity through open-source innovation.
-      </p>
-      <span class="view-more" id="viewMoreSpan" onclick="toggleProject(event)">View More</span>
-    </div>
+  <div class="project-box">
+    <h3>Bunny AI </h3>
+
+    <p id="projectShort">
+      Bunny AI is a smart and friendly AI-based project designed to provide users with helpful 
+        information and interactive responses through a simple and intuitive interface. 
+    </p>
+
+    <span class="view-more" id="viewMoreSpan" onclick="toggleProject(event)">View More</span>
 
     <div class="project-more" id="projectMore">
       <p>
-        Bunny AI is an intelligent AI-powered assistant designed to help users get quick, accurate, and user-friendly responses to their questions. The project focuses on simplicity, speed, and a clean interface while delivering smart conversational capabilities. Built with Python, it integrates advanced logic frameworks and automation protocols to enable seamless interactions. Bunny AI can understand user queries, provide meaningful answers, and assist with learning, problem-solving, and general information, making it a versatile tool for productivity and cybersecurity education. This open-source project emphasizes ethical development, scalability, and real-world applications in AI-driven workflows.
+        Bunny AI is a smart and friendly AI-based project designed to provide users with helpful 
+        information and interactive responses through a simple and intuitive interface. Its cute 
+        bunny-themed design, smooth animations, and modern UI make the experience engaging and enjoyable.
+        The main goal of Bunny AI is to create a user-friendly, interactive, and visually appealing 
+        AI project that is useful for both beginners and developers.
       </p>
-      <div class="project-actions">
-        <button onclick="openProject(event)">Learn More</button>
-      </div>
+
+      <button onclick="openProject(event)">Visit GitHub</button>
     </div>
   </div>
 </section>
 
 <!-- SKILLS -->
 <section id="skills" class="section">
-  <div class="content-box">
-    <h2>Skills</h2>
-    <div class="skills-grid">
-      <div class="skill"> Python</div>
-      <div class="skill"> Ethical Hacking</div>
-      <div class="skill"> Linux</div>
-      <div class="skill"> Cybersecurity</div>
-    </div>
+  <h2 class="section-title">Skills</h2>
+
+  <div class="skills-grid">
+    <div class="skill-box"> Python</div>
+    <div class="skill-box"> Ethical Hacking</div>
+    <div class="skill-box"> Linux</div>
+    <div class="skill-box"> Cybersecurity</div>
   </div>
 </section>
 
 <!-- ABOUT -->
 <section id="about" class="section">
-  <h2>About Me</h2>
-  <p>
-    I am <strong>Anup Prasad</strong>, a passionate learner in the field of
+  <h2 class="section-title">About Me</h2>
+  <p class="center-text">
+    I am <strong>Anup Prasad</strong>, a passionate learner in
     <strong>Ethical Hacking</strong> and <strong>Cybersecurity</strong>.
-    Currently pursuing my studies at
-    <strong>Pt. Jawaharlal Nehru Government College</strong>.
-    I enjoy building tools, exploring security concepts, and working on
-    Python-based automation and AI projects.
+    I enjoy building tools, exploring security concepts,
+    and working on Python-based automation & AI projects.
   </p>
 </section>
 
 <!-- CONTACT -->
 <section id="contact" class="section">
-  <div class="content-box">
-    <h2>Contact</h2>
+  <h2 class="section-title">Contact</h2>
 
-    <a class="contact-link" href="https://github.com/AloneHacker-008" target="_blank">
+  <div class="contact-box">
+     <a class="contact-link" href="https://github.com/AloneHacker-008" target="_blank">
       <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png">
       https://github.com/AloneHacker-008
     </a>
@@ -114,4 +119,4 @@
 
 <script src="script.js"></script>
 </body>
-</html>
+  </html>
