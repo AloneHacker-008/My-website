@@ -2,7 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Segoe UI", sans-serif;
+  font-family: 'Orbitron', sans-serif;
 }
 
 body {
@@ -10,7 +10,12 @@ body {
   color: #e6f1ff;
 }
 
-/* Background video */
+/* Scroll fix */
+.section {
+  scroll-margin-top: 90px;
+}
+
+/* Background */
 #bgVideo {
   position: fixed;
   inset: 0;
@@ -29,25 +34,21 @@ body {
 
 /* Header */
 .header {
-  height: 60px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 20px;
+  height: 70px;
   position: sticky;
   top: 0;
   background: rgba(10,14,20,0.9);
-  z-index: 20; /* Ensure header is above slide-menu */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  z-index: 20;
 }
 
 .menu-icon {
-  font-size: 26px;
+  font-size: 28px;
   color: #00f6ff;
   cursor: pointer;
-}
-
-.nav-links {
-  display: flex;
 }
 
 .nav-links a {
@@ -56,172 +57,98 @@ body {
   text-decoration: none;
 }
 
-/* Slide menu */
+/* Slide Menu */
 .slide-menu {
   max-height: 0;
   overflow: hidden;
+  transition: 0.4s;
   background: #0b0f14;
-  transition: max-height 0.4s ease;
-  z-index: 15; /* Below header but above content */
   position: absolute;
-  top: 60px; /* Position below header */
   width: 100%;
+  top: 70px;
 }
 
 .slide-menu.open {
-  max-height: 400px;
+  max-height: 300px;
 }
 
 .slide-menu a {
   display: block;
-  padding: 14px 20px;
-  color: #e6f1ff;
+  padding: 15px;
+  color: #00f6ff;
 }
 
 /* Sections */
 .section {
-  padding: 60px 20px; /* Reduced from 100px to 60px for less gap */
   max-width: 900px;
   margin: auto;
-}
-
-.hero {
+  padding: 90px 20px;
   text-align: center;
-  padding-top: 140px;
 }
 
-/* Improved zig-zag glitch */
-.glitch {
-  font-size: 52px;
-  font-weight: 700;
-  position: relative;
-  color: #00f6ff;
-  display: inline-block; /* Ensure it's contained */
+/* Section title + line */
+.section-title {
+  font-size: 28px;
+  margin-bottom: 12px;
 }
 
-.glitch::before,
-.glitch::after {
-  content: attr(data-text);
-  position: absolute;
-  top: 0;
-  left: 0;
-  opacity: 0.8;
-  width: 100%; /* Ensure full width */
-  height: 100%;
+.section-title::after {
+  content: "";
   display: block;
+  width: 80px;
+  height: 3px;
+  background: linear-gradient(90deg, #00f6ff, #8a7dff);
+  margin: 15px auto 40px;
+  border-radius: 5px;
 }
 
-.glitch::before {
-  color: #ff005a;
-  animation: glitchZig 1.2s infinite steps(1);
+/* Hero */
+.hero {
+  padding-top: 160px;
 }
 
-.glitch::after {
-  color: #8a7dff;
-  animation: glitchZig 1.6s infinite steps(1);
+.glitch {
+  font-size: 54px;
+  color: #00f6ff;
+  position: relative;
 }
 
-@keyframes glitchZig {
-  0% { transform: translate(0,0); }
-  20% { transform: translate(-3px,-2px); }
-  40% { transform: translate(3px,2px); }
-  60% { transform: translate(-2px,3px); }
-  80% { transform: translate(2px,-3px); }
-  100% { transform: translate(0,0); }
-}
-
-/* Typewriter */
 .typewriter {
   margin-top: 15px;
-  font-size: 18px;
   color: #00f6ff;
 }
 
-/* CTA */
-.cta-buttons {
-  margin-top: 30px;
-}
-
+/* Buttons */
 .cta-buttons button {
-  padding: 14px 28px;
-  margin: 10px;
-  border-radius: 6px;
-  cursor: pointer;
-  border: none;
+  margin: 15px;
+  padding: 14px 30px;
   background: linear-gradient(135deg, #00f6ff, #8a7dff);
-  transition: transform 0.3s, box-shadow 0.3s;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
 }
 
 .cta-buttons button:hover {
-  transform: scale(1.15);
-  box-shadow: 0 0 30px rgba(0,246,255,0.8);
+  transform: scale(1.1);
 }
 
-.outline {
-  background: transparent;
-  color: #00f6ff;
-  border: 1px solid #00f6ff;
-}
-
-.black-button {
-  background: #000; /* Black background */
-  color: #e6f1ff;
-  border: 1px solid #000;
-}
-
-.black-button:hover {
-  background: #333; /* Darker on hover */
-  box-shadow: 0 0 30px rgba(0,0,0,0.8);
-}
-
-/* Project box */
+/* Projects */
 .project-box {
   background: #121a26;
-  border-radius: 12px;
-  padding: 25px;
-  margin-top: 30px;
-  position: relative;
-  transition: transform 0.3s, box-shadow 0.3s;
-  overflow: hidden; /* Ensure content stays inside */
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 0 30px rgba(0,246,255,0.25);
 }
 
-.project-box:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 35px rgba(0,246,255,0.4);
-}
-
-.project-box p {
-  text-align: justify; /* Justify text in project box */
-}
-
-.project-background {
-  display: block;
-}
-
-h2 {
-  margin-bottom: 20px; /* Added gap after section headings */
-}
-
-h3 {
-  margin-top: 15px; /* Gap between Projects and Bunny AI */
-  margin-bottom: 10px;
-}
-
-.project-background h3 {
-  margin-bottom: 10px;
+.project-box h3 {
   color: #00f6ff;
-  font-size: 24px; /* Ensure it's prominent */
-}
-
-.project-short {
   margin-bottom: 15px;
-  line-height: 1.5;
 }
 
 .view-more {
-  display: block;
   color: #00f6ff;
   cursor: pointer;
+  display: inline-block;
   margin-top: 10px;
 }
 
@@ -230,65 +157,44 @@ h3 {
   margin-top: 15px;
 }
 
-.project-more p {
-  margin-bottom: 15px;
-}
-
-/* Buttons inside project */
-.project-actions button {
-  margin-top: 10px;
-  padding: 10px 20px;
+.project-more button {
   background: transparent;
   border: 1px solid #00f6ff;
   color: #00f6ff;
+  padding: 10px 20px;
   cursor: pointer;
 }
 
-/* Skills & Contact auto box */
-.content-box {
-  background: #121a26;
-  padding: 25px;
-  border-radius: 12px;
-  display: inline-block;
-}
-
-.content-box p {
-  text-align: justify; /* Justify text in content boxes */
-}
-
+/* Skills */
 .skills-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(130px,1fr));
-  gap: 15px;
-  margin-top: 15px;
+  grid-template-columns: repeat(auto-fit, minmax(160px,1fr));
+  gap: 20px;
 }
 
-.skill {
-  background: #0b0f14;
-  padding: 12px;
-  border-radius: 6px;
-  text-align: center;
-  transition: transform 0.3s, box-shadow 0.3s; /* Added hover effects */
+.skill-box {
+  background: linear-gradient(145deg, #121a26, #0b0f14);
+  padding: 25px;
+  border-radius: 16px;
+  box-shadow: 0 0 30px rgba(0,246,255,0.25);
+  transition: 0.3s;
 }
 
-.skill:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 35px rgba(0,246,255,0.4);
+.skill-box:hover {
+  transform: translateY(-6px) scale(1.05);
 }
 
-.contact-link {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  margin-top: 12px;
+/* Contact */
+.contact-box a {
+  display: block;
+  margin: 15px 0;
   color: #00f6ff;
   text-decoration: none;
 }
 
-.contact-link img {
-  width: 22px;
-}
-
+/* Responsive */
 @media (max-width: 768px) {
-  .nav-links { display: none; }
-}
+  .nav-links {
+    display: none;
+  }
+  }
