@@ -8,104 +8,112 @@
 </head>
 <body>
 
-  <!-- Background Video -->
-  <video autoplay muted loop playsinline id="bgVideo">
-    <source src="210824_medium.mp4" type="video/mp4">
-  </video>
-  <div class="overlay"></div>
+<!-- Background Video -->
+<video autoplay muted loop playsinline id="bgVideo">
+  <source src="210824_medium.mp4" type="video/mp4">
+</video>
+<div class="overlay"></div>
 
-  <!-- Header -->
-  <header class="header">
-    <div class="menu-icon" onclick="toggleMenuAndScroll()">☰</div>
-    <nav class="nav-links">
-      <a href="#home">Home</a>
-      <a href="#projects">Projects</a>
-      <a href="#skills">Skills</a>
-      <a href="#about">About</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </header>
+<!-- Header -->
+<header class="header">
+  <div class="menu-icon" onclick="toggleMenuAndScroll()">☰</div>
+  <nav class="nav-links">
+    <a href="#home">Home</a>
+    <a href="#projects">Projects</a>
+    <a href="#skills">Skills</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
 
-  <!-- Slide Menu -->
-  <div class="slide-menu" id="slideMenu">
-    <a href="#home" onclick="closeMenu()">Home</a>
-    <a href="#projects" onclick="closeMenu()">Projects</a>
-    <a href="#skills" onclick="closeMenu()">Skills</a>
-    <a href="#about" onclick="closeMenu()">About</a>
-    <a href="#contact" onclick="closeMenu()">Contact</a>
+<div class="slide-menu" id="slideMenu">
+  <a href="#home" onclick="closeMenu()">Home</a>
+  <a href="#projects" onclick="closeMenu()">Projects</a>
+  <a href="#skills" onclick="closeMenu()">Skills</a>
+  <a href="#about" onclick="closeMenu()">About</a>
+  <a href="#contact" onclick="closeMenu()">Contact</a>
+</div>
+
+<!-- HERO -->
+<section id="home" class="section hero">
+  <h1 class="glitch" data-text="Anup Prasad">Anup Prasad</h1>
+  <p class="typewriter"><span id="typing"></span></p>
+
+  <div class="cta-buttons">
+    <button onclick="goToProjects()">View Projects</button>
+    <button class="outline" onclick="goToContact()">Contact Me</button>
   </div>
+</section>
 
-  <!-- HERO -->
-  <section id="home" class="section hero">
-    <h1 class="glitch" data-text="Anup Prasad">Anup Prasad</h1>
+<!-- PROJECTS -->
+<section id="projects" class="section">
+  <h2>Projects</h2>
 
-    <p class="typewriter">
-      <span id="typing"></span>
+  <div class="project-box" onclick="toggleProject()">
+    <h3>🐰 Bunny AI</h3>
+
+    <p class="project-short">
+      Bunny AI is a Python-based intelligent assistant.
     </p>
 
-    <div class="cta-buttons">
-      <button onclick="goToProjects()">View Projects</button>
-      <button class="outline" onclick="goToContact()">Contact Me</button>
-    </div>
-  </section>
+    <div class="project-more" id="projectMore">
+      <p>
+        Bunny AI is an advanced Python-powered AI assistant designed for
+        automation, command execution, smart responses, and cybersecurity-related
+        learning experiments. The project focuses on logic building, AI workflows,
+        and automation techniques.
+      </p>
 
-  <!-- PROJECTS -->
-  <section id="projects" class="section">
-    <h2>Projects</h2>
-
-    <div class="project-card"
-      onclick="openProject('https://github.com/AloneHacker-008/Bunny-AI')">
-      <img src="https://cdn-icons-png.flaticon.com/512/616/616408.png">
-      <div>
-        <h3>Bunny AI</h3>
-        <p>Bunny AI is an intelligent AI-powered assistant designed to help users get quick, accurate, and user-friendly responses to their questions.
-        The project focuses on simplicity, speed, and a clean interface while delivering smart conversational capabilities.
-Bunny AI can understand user queries, provide meaningful answers, and assist with learning, problem-solving, and general information. </p>
+      <div class="project-actions">
+        <button onclick="openProject(event)">Visit GitHub</button>
       </div>
     </div>
-  </section>
 
-  <!-- SKILLS -->
-  <section id="skills" class="section dark">
+    <span class="view-more">View More</span>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills" class="section">
+  <div class="content-box">
     <h2>Skills</h2>
     <div class="skills-grid">
       <div class="skill"> Python</div>
       <div class="skill"> Ethical Hacking</div>
       <div class="skill"> Linux</div>
       <div class="skill"> Cybersecurity</div>
-      <div class="skill"> Problem Solving</div>
-      <div class="skill"> Networking Basics</div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- ABOUT -->
-  <section id="about" class="section">
-    <h2>About Me</h2>
-    <p>
-      I am <strong>Anup Prasad</strong>, a passionate learner in the field of
-      <strong>Ethical Hacking</strong> and <strong>Cybersecurity</strong>.
-      Currently pursuing my studies at
-      <strong>Pt. Jawaharlal Nehru Government College</strong>.
-      I enjoy building tools, exploring security concepts, and working on
-      Python-based automation and AI projects.
-    </p>
-  </section>
+<!-- ABOUT -->
+<section id="about" class="section">
+  <h2>About Me</h2>
+  <p>
+    I am <strong>Anup Prasad</strong>, currently studying at
+    <strong>Pt. Jawaharlal Nehru Government College</strong>.
+    I am deeply interested in ethical hacking, cybersecurity,
+    and building intelligent Python-based systems like Bunny AI.
+  </p>
+</section>
 
-  <!-- CONTACT -->
-  <section id="contact" class="section dark">
+<!-- CONTACT -->
+<section id="contact" class="section">
+  <div class="content-box">
     <h2>Contact</h2>
 
     <a class="contact-link" href="https://github.com/AloneHacker-008" target="_blank">
       <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png">
-      AloneHacker-008
+      https://github.com/AloneHacker-008
     </a>
 
     <a class="contact-link" href="https://t.me/AloneHacker_008" target="_blank">
       <img src="https://cdn-icons-png.flaticon.com/512/2111/2111646.png">
-      @AloneHacker_008
+      https://t.me/AloneHacker_008
     </a>
-  </section>
+  </div>
+</section>
 
-  <script src="script.js"></script>
+<script src="script.js"></script>
 </body>
-  </html>
+</html>
