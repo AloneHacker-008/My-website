@@ -62,7 +62,7 @@ body {
   overflow: hidden;
   background: #0b0f14;
   transition: max-height 0.4s ease;
-  z-index: 10;
+  z-index: 15; /* Below header but above content */
   position: absolute;
   top: 60px; /* Position below header */
   width: 100%;
@@ -80,7 +80,7 @@ body {
 
 /* Sections */
 .section {
-  padding: 100px 20px;
+  padding: 60px 20px; /* Reduced from 100px to 60px for less gap */
   max-width: 900px;
   margin: auto;
 }
@@ -190,6 +190,10 @@ body {
   box-shadow: 0 0 35px rgba(0,246,255,0.4);
 }
 
+.project-box p {
+  text-align: justify; /* Justify text in project box */
+}
+
 .project-background {
   display: block;
 }
@@ -246,6 +250,10 @@ h3 {
   padding: 25px;
   border-radius: 12px;
   display: inline-block;
+}
+
+.content-box p {
+  text-align: justify; /* Justify text in content boxes */
 }
 
 .skills-grid {
