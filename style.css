@@ -2,75 +2,66 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: Arial, sans-serif;
+  font-family: "Segoe UI", sans-serif;
 }
 
 body {
-  color: white;
-  background: black;
+  background: #0b0f14;
+  color: #e6f1ff;
 }
 
-/* Background Video */
+/* Background video */
 #bgVideo {
   position: fixed;
-  top: 0;
-  left: 0;
+  inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
   z-index: -2;
 }
 
-/* Overlay */
 .overlay {
   position: fixed;
   inset: 0;
-  background: rgba(0,0,0,0.75);
+  background: rgba(11, 15, 20, 0.85);
   z-index: -1;
 }
 
-/* HEADER */
+/* Header */
 .header {
-  position: fixed;
+  position: sticky;
   top: 0;
-  width: 100%;
   height: 60px;
-  background: rgba(0,0,0,0.85);
+  background: rgba(11,15,20,0.9);
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 0 20px;
-  z-index: 1000;
+  z-index: 100;
 }
 
 .menu-icon {
   font-size: 26px;
-  color: red;
+  color: #00f6ff;
   cursor: pointer;
 }
 
-/* Desktop menu */
 .nav-links a {
   margin-left: 20px;
-  color: white;
   text-decoration: none;
+  color: #e6f1ff;
 }
 
 .nav-links a:hover {
-  color: red;
+  color: #8a7dff;
 }
 
-/* Slide Menu */
+/* Slide menu */
 .slide-menu {
-  position: fixed;
-  top: 60px;
-  left: 0;
-  width: 100%;
-  background: black;
-  overflow: hidden;
   max-height: 0;
+  overflow: hidden;
+  background: #0b0f14;
   transition: max-height 0.4s ease;
-  z-index: 999;
 }
 
 .slide-menu.open {
@@ -79,52 +70,72 @@ body {
 
 .slide-menu a {
   display: block;
-  padding: 15px;
-  color: white;
+  padding: 14px 20px;
   text-decoration: none;
-  border-bottom: 1px solid #222;
+  color: #e6f1ff;
+  border-bottom: 1px solid #1c2533;
 }
 
 .slide-menu a:hover {
-  background: red;
+  background: #121a26;
+  color: #00f6ff;
 }
 
 /* Sections */
 .section {
-  min-height: 100vh;
-  padding-top: 100px;
-  text-align: center;
+  padding: 80px 20px;
+  max-width: 900px;
+  margin: auto;
+}
+
+.section h2 {
+  margin-bottom: 20px;
+  color: #00f6ff;
 }
 
 .dark {
-  background: #0a0a0a;
+  background: #0e141c;
 }
 
-.hero h1 span {
-  color: red;
+.hero {
+  text-align: center;
+  padding-top: 120px;
 }
 
-.hero p {
-  margin: 15px 0;
-  opacity: 0.8;
+.hero span {
+  color: #8a7dff;
 }
 
-/* Button */
-#glowBtn {
+.hero button {
+  margin-top: 25px;
   padding: 12px 30px;
-  background: red;
-  color: white;
+  background: linear-gradient(135deg, #00f6ff, #8a7dff);
   border: none;
+  color: black;
   cursor: pointer;
-  transition: 0.3s;
+  transition: transform 0.3s, box-shadow 0.3s;
 }
 
-#glowBtn.active {
-  transform: scale(1.2);
-  box-shadow: 0 0 10px red, 0 0 30px red;
+.hero button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 25px #00f6ff;
 }
 
-/* Responsive */
+/* GitHub link */
+.github-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 15px;
+  color: #00f6ff;
+  text-decoration: none;
+}
+
+.github-link img {
+  width: 22px;
+}
+
+/* Mobile */
 @media (max-width: 768px) {
   .nav-links {
     display: none;
