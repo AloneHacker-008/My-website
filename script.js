@@ -1,31 +1,10 @@
-/* Menu */
 function toggleMenuAndScroll() {
-  const menu = document.getElementById("slideMenu");
-  const navLinks = document.querySelector('.nav-links');
-  menu.classList.toggle("open");
-  if (menu.classList.contains("open")) {
-    navLinks.style.display = 'none'; // Hide nav-links when menu opens
-    window.scrollTo({ top: 0, behavior: 'smooth' }); // Scroll to top
-  } else {
-    navLinks.style.display = 'flex'; // Show nav-links when menu closes
-  }
+  document.getElementById("slideMenu").classList.toggle("open");
 }
 
 function closeMenu() {
-  const menu = document.getElementById("slideMenu");
-  const navLinks = document.querySelector('.nav-links');
-  menu.classList.remove("open");
-  navLinks.style.display = 'flex'; // Ensure nav-links are shown when closing
+  document.getElementById("slideMenu").classList.remove("open");
 }
-
-// Close menu when clicking outside
-document.addEventListener('click', function(event) {
-  const menu = document.getElementById("slideMenu");
-  const header = document.querySelector('.header');
-  if (!header.contains(event.target) && !menu.contains(event.target)) {
-    closeMenu();
-  }
-});
 
 /* Scroll buttons */
 function goToProjects() {
@@ -36,45 +15,26 @@ function goToContact() {
   document.getElementById("contact").scrollIntoView({ behavior: "smooth" });
 }
 
-/* Project overlay and toggle */
-function showProjectOverlay() {
-  // Optional: Add any additional hover effects if needed
-}
-
-function hideProjectOverlay() {
-  // Optional: Add any additional hover effects if needed
-}
-
-function toggleProject(event) {
-  event.stopPropagation();
+/* Project toggle */
+function toggleProject(e) {
+  e.stopPropagation();
   const more = document.getElementById("projectMore");
   const short = document.getElementById("projectShort");
-  const viewMoreSpan = document.getElementById("viewMoreSpan");
+  const view = document.getElementById("viewMoreSpan");
+
   if (more.style.display === "block") {
     more.style.display = "none";
     short.style.display = "block";
-    viewMoreSpan.style.display = "block";
+    view.style.display = "inline";
   } else {
     more.style.display = "block";
     short.style.display = "none";
-    viewMoreSpan.style.display = "none";
+    view.style.display = "none";
   }
 }
 
-function collapseProject() {
-  const more = document.getElementById("projectMore");
-  const short = document.getElementById("projectShort");
-  const viewMoreSpan = document.getElementById("viewMoreSpan");
-  if (more.style.display === "block") {
-    more.style.display = "none";
-    short.style.display = "block";
-    viewMoreSpan.style.display = "block";
-  }
-}
-
-/* Prevent card toggle when clicking button */
-function openProject(event) {
-  event.stopPropagation();
+function openProject(e) {
+  e.stopPropagation();
   window.open("https://github.com/AloneHacker-008/Bunny-AI", "_blank");
 }
 
@@ -86,29 +46,23 @@ const texts = [
   "Open Source Learner"
 ];
 
-let index = 0;
-let char = 0;
+let index = 0, char = 0;
 const typingEl = document.getElementById("typing");
 
 function typeEffect() {
   if (char < texts[index].length) {
-    typingEl.textContent += texts[index].charAt(char);
-    char++;
+    typingEl.textContent += texts[index][char++];
     setTimeout(typeEffect, 80);
-  } else {
-    setTimeout(eraseEffect, 1400);
-  }
+  } else setTimeout(eraseEffect, 1500);
 }
 
 function eraseEffect() {
   if (char > 0) {
-    typingEl.textContent = texts[index].substring(0, char - 1);
-    char--;
+    typingEl.textContent = texts[index].substring(0, --char);
     setTimeout(eraseEffect, 50);
   } else {
     index = (index + 1) % texts.length;
     setTimeout(typeEffect, 300);
   }
 }
-
 typeEffect();
