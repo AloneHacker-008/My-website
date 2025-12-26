@@ -5,22 +5,22 @@
   <title>Anup Prasad | Portfolio</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- Google Fonts -->
+  <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<!-- Background Video -->
+<!-- Background -->
 <video autoplay muted loop playsinline id="bgVideo">
   <source src="210824_medium.mp4" type="video/mp4">
 </video>
 <div class="overlay"></div>
 
-<!-- Header -->
+<!-- HEADER -->
 <header class="header">
-  <div class="menu-icon" onclick="toggleMenuAndScroll()">☰</div>
+  <div class="menu-icon" onclick="openMenu()">☰</div>
   <nav class="nav-links">
     <a href="#home">Home</a>
     <a href="#projects">Projects</a>
@@ -30,6 +30,7 @@
   </nav>
 </header>
 
+<!-- SLIDE MENU -->
 <div class="slide-menu" id="slideMenu">
   <a href="#home" onclick="closeMenu()">Home</a>
   <a href="#projects" onclick="closeMenu()">Projects</a>
@@ -55,7 +56,8 @@
 
   <div class="project-box">
     <h3>Bunny AI</h3>
-    <p id="projectShort">
+    
+  <p id="projectShort">
       Bunny AI is a smart and friendly AI-based project designed to provide users with helpful 
       information and interactive responses through a simple and intuitive interface.
     </p>
@@ -70,7 +72,6 @@
         The main goal of Bunny AI is to create a user-friendly, interactive, and visually appealing 
         AI project that is useful for both beginners and developers.
       </p>
-
       <button onclick="openProject(event)">Visit GitHub</button>
     </div>
   </div>
@@ -79,7 +80,6 @@
 <!-- SKILLS -->
 <section id="skills" class="section">
   <h2 class="section-title">Skills</h2>
-
   <div class="skills-grid">
     <div class="skill-box">Python</div>
     <div class="skill-box">Ethical Hacking</div>
@@ -92,10 +92,8 @@
 <section id="about" class="section">
   <h2 class="section-title">About Me</h2>
   <p class="center-text">
-    I am <strong>Anup Prasad</strong>, a passionate learner in
-    <strong>Ethical Hacking</strong> and <strong>Cybersecurity</strong>.
-    I enjoy building tools, exploring security concepts,
-    and working on Python-based automation & AI projects.
+    I am <strong>Anup Prasad</strong>, a cybersecurity and ethical hacking learner,
+    passionate about building AI tools and automation projects.
   </p>
 </section>
 
@@ -104,17 +102,50 @@
   <h2 class="section-title">Contact</h2>
 
   <div class="contact-box">
-     <a class="contact-link" href="https://github.com/AloneHacker-008" target="_blank">
+    <a class="contact-link" href="https://github.com/AloneHacker-008" target="_blank">
       <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png">
-      https://github.com/AloneHacker-008
+      AloneHacker-008
     </a>
 
     <a class="contact-link" href="https://t.me/AloneHacker_008" target="_blank">
       <img src="https://cdn-icons-png.flaticon.com/512/2111/2111646.png">
-      https://t.me/AloneHacker_008
+      @AloneHacker_008
     </a>
   </div>
 </section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-container">
+
+    <div class="footer-col">
+      <h3>Anup Prasad</h3>
+      <p>
+        Ethical Hacker & Cybersecurity learner focused on
+        building secure, intelligent, and modern web projects.
+      </p>
+    </div>
+
+    <div class="footer-col">
+      <h3>Quick Links</h3>
+      <a href="#home">Home</a>
+      <a href="#projects">Projects</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact">Contact</a>
+    </div>
+
+    <div class="footer-col">
+      <h3>Contact</h3>
+      <p>GitHub: AloneHacker-008</p>
+      <p>Telegram: @AloneHacker_008</p>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    © 2025 Anup Prasad | All Rights Reserved
+  </div>
+</footer>
 
 <script src="script.js"></script>
 </body>
