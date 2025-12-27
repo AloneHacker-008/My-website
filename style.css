@@ -316,174 +316,108 @@ body {
 
 .contact_us_green .responsive-container-block {
   min-height: 75px;
-  height: fit-content;
   width: 100%;
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start;
-  margin-top: 0px;
-  margin-right: auto;
-  margin-bottom: 60px;
-  margin-left: auto;
+  margin: 0 auto 60px auto;
 }
 
-.contact_us_green input:focus {
-  outline-color: initial;
-  outline-style: none;
-  outline-width: initial;
-}
-
+/* REMOVE DEFAULT FOCUS OUTLINE */
+.contact_us_green input:focus,
 .contact_us_green textarea:focus {
-  outline-color: initial;
-  outline-style: none;
-  outline-width: initial;
+  outline: none;
 }
 
+/* TEXT */
 .contact_us_green .text-blk {
-  margin-top: 0px;
-  margin-right: 0px;
-  margin-bottom: 0px;
-  margin-left: 0px;
   line-height: 25px;
-}
-
-.contact_us_green .responsive-cell-block {
-  min-height: 75px;
 }
 
 .contact_us_green .responsive-container-block.container {
   max-width: 1320px;
-  margin-top: 60px;
-  margin-right: auto;
-  margin-bottom: 60px;
-  margin-left: auto;
+  margin: 60px auto;
 }
 
 .contact_us_green .responsive-container-block.big-container {
-  padding-top: 0px;
-  padding-right: 50px;
-  padding-bottom: 0px;
-  padding-left: 50px;
+  padding: 0 50px;
 }
 
+/* HEADING */
 .contact_us_green .text-blk.contactus-head {
   font-size: 40px;
   line-height: 50px;
   font-weight: 700;
-  margin-top: 0px;
-  margin-right: 0px;
   margin-bottom: 10px;
-  margin-left: 0px;
 }
 
 .contact_us_green .text-blk.contactus-subhead {
   max-width: 385px;
   color: #939393;
   font-size: 18px;
-  margin-top: 0px;
-  margin-right: 0px;
   margin-bottom: 50px;
-  margin-left: 0px;
 }
 
-.contact_us_green .contact-svg {
-  padding-top: 0px;
-  padding-right: 25px;
-  padding-bottom: 0px;
-  padding-left: 0px;
-  width: 65px;
-  height: 40px;
+/* INPUT TITLE */
+.contact_us_green .text-blk.input-title {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 15px;
 }
 
-.contact_us_green .social-media-links {
-  margin-top: 80px;
-  margin-right: auto;
-  margin-bottom: 0px;
-  margin-left: auto;
-  width: 250px;
+/* 🔥 FORM LAYOUT: FLEXBOX FOR ROWS */
+.contact_us_green .container-block.form-wrapper .responsive-container-block {
   display: flex;
-  justify-content: space-evenly;
+  flex-wrap: wrap;
+  gap: 20px; /* Space between fields */
 }
 
-.contact_us_green .social-svg {
-  width: 35px;
-  height: 35px;
+/* 🔥 FIRST ROW: FIRST NAME and LAST NAME (side by side) */
+.contact_us_green .responsive-cell-block.wk-ipadp-6.wk-tab-12.wk-mobile-12.wk-desk-6:nth-child(1),
+.contact_us_green .responsive-cell-block.wk-desk-6.wk-ipadp-6.wk-tab-12.wk-mobile-12:nth-child(2) {
+  flex: 1 1 45%; /* Each takes ~45% width, side by side */
+  min-width: 200px; /* Minimum width to prevent too small */
 }
 
-.contact_us_green .text-box {
-  display: flex;
-  margin-top: 0px;
-  margin-right: 0px;
-  margin-bottom: 50px;
-  margin-left: 0px;
+/* 🔥 SECOND ROW: EMAIL and PHONE NUMBER (side by side) */
+.contact_us_green .responsive-cell-block.wk-desk-6.wk-ipadp-6.wk-tab-12.wk-mobile-12:nth-child(3),
+.contact_us_green .responsive-cell-block.wk-desk-6.wk-ipadp-6.wk-tab-12.wk-mobile-12:nth-child(4) {
+  flex: 1 1 45%; /* Each takes ~45% width, side by side */
+  min-width: 200px;
 }
 
-.contact_us_green .contact-text {
-  color: #939393;
+/* 🔥 THIRD ROW: WHAT DO YOU HAVE IN MIND (full width) */
+.contact_us_green .responsive-cell-block.wk-tab-12.wk-mobile-12.wk-desk-12.wk-ipadp-12 {
+  flex: 1 1 100%; /* Full width */
 }
 
+/* 🔥 INPUT FIELDS – FULL WIDTH INSIDE CELLS */
 .contact_us_green .input {
   height: 50px;
-  width: 90%;
-  border-top-width: 2.5px;
-  border-right-width: 2.5px;
-  border-bottom-width: 2.5px;
-  border-left-width: 2.5px;
-  border-top-style: solid;
-  border-right-style: solid;
-  border-bottom-style: solid;
-  border-left-style: solid;
-  border-top-color: #a2a2a2;
-  border-right-color: #a2a2a2;
-  border-bottom-color: #a2a2a2;
-  border-left-color: #a2a2a2;
-  border-image-source: initial;
-  border-image-slice: initial;
-  border-image-width: initial;
-  border-image-outset: initial;
-  border-image-repeat: initial;
-  border-top-left-radius: 5px;
-  border-top-right-radius: 5px;
-  border-bottom-right-radius: 5px;
-  border-bottom-left-radius: 5px;
+  width: 100%; /* Increased to full width */
+  border: 2.5px solid #a2a2a2;
+  border-radius: 5px;
   font-size: 16px;
-  padding-top: 5px;
-  padding-right: 15px;
-  padding-bottom: 5px;
-  padding-left: 15px;
+  padding: 5px 15px;
 }
 
+/* 🔥 TEXTAREA – FULL WIDTH */
 .contact_us_green .textinput {
   height: 200px;
-  width: 95%;
-  border-top-width: 2px;
-  border-right-width: 2px;
-  border-bottom-width: 2px;
-  border-left-width: 2px;
-  border-top-style: solid;
-  border-right-style: solid;
-  border-bottom-style: solid;
-  border-left-style: solid;
-  border-top-color: #a2a2a2;
-  border-right-color: #a2a2a2;
-  border-bottom-color: #a2a2a2;
-  border-left-color: #a2a2a2;
-  border-image-source: initial;
-  border-image-slice: initial;
-  border-image-width: initial;
-  border-image-outset: initial;
-  border-image-repeat: initial;
-  border-top-left-radius: 5px;
-  border-top-right-radius: 5px;
-  border-bottom-right-radius: 5px;
-  border-bottom-left-radius: 5px;
+  width: 100%; /* Increased to full width */
+  border: 2px solid #a2a2a2;
+  border-radius: 5px;
   font-size: 16px;
-  padding-top: 20px;
-  padding-right: 30px;
-  padding-bottom: 20px;
-  padding-left: 20px;
+  padding: 20px;
+  resize: none;
 }
 
+/* INPUT BOX SPACING */
+.contact_us_green .responsive-cell-block {
+  margin-bottom: 30px;
+}
+
+/* SUBMIT BUTTON */
 .contact_us_green .submit-btn {
   min-width: 290px;
   height: 60px;
@@ -491,130 +425,74 @@ body {
   font-size: 18px;
   font-weight: 700;
   color: white;
-  border-top-width: 2px;
-  border-right-width: 2px;
-  border-bottom-width: 2px;
-  border-left-width: 2px;
-  border-top-style: none;
-  border-right-style: none;
-  border-bottom-style: none;
-  border-left-style: none;
-  border-top-color: #767676;
-  border-right-color: #767676;
-  border-bottom-color: #767676;
-  border-left-color: #767676;
-  border-image-source: initial;
-  border-image-slice: initial;
-  border-image-width: initial;
-  border-image-outset: initial;
-  border-image-repeat: initial;
-  border-top-left-radius: 5px;
-  border-top-right-radius: 5px;
-  border-bottom-right-radius: 5px;
-  border-bottom-left-radius: 5px;
-  margin-top: 0px;
-  margin-right: auto;
-  margin-bottom: 0px;
-  margin-left: auto;
+  border: none;
+  border-radius: 5px;
   cursor: pointer;
 }
 
+/* BUTTON CENTER */
 .contact_us_green .btn-wrapper {
   display: flex;
   justify-content: center;
 }
 
-.contact_us_green .text-blk.input-title {
-  font-size: 18px;
-  font-weight: 600;
-  line-height: 28px;
-  margin-top: 0px;
-  margin-right: 0px;
-  margin-bottom: 15px;
-  margin-left: 0px;
+/* DIVIDER LINE */
+.contact_us_green .line {
+  border-right: 1.8px solid #a2a2a2;
 }
 
-.contact_us_green .responsive-cell-block.wk-ipadp-6.wk-tab-12.wk-mobile-12.wk-desk-6 {
-  margin-top: 0px;
-  margin-right: 0px;
-  margin-bottom: 30px;
-  margin-left: 0px;
-}
-
-.contact_us_green .responsive-cell-block.wk-tab-12.wk-mobile-12.wk-desk-5.wk-ipadp-10 {
-  padding-top: 0px;
-  padding-right: 0px;
-  padding-bottom: 0px;
+/* RIGHT SIDE CONTENT */
+.contact_us_green .responsive-cell-block.wk-desk-5 {
   padding-left: 60px;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.contact_us_green .head-text-box {
-  display: none;
-}
-
-.contact_us_green .line {
-  border-right-width: 1.8px;
-  border-right-style: solid;
-  border-right-color: #a2a2a2;
-}
-
-.contact_us_green .responsive-cell-block.wk-tab-12.wk-mobile-12.wk-desk-7.wk-ipadp-10.line {
-  padding-top: 0px;
-  padding-right: 20px;
-  padding-bottom: 0px;
-  padding-left: 0px;
-}
+/* ================== RESPONSIVE ================== */
 
 @media (max-width: 1024px) {
   .contact_us_green .responsive-container-block.container {
     justify-content: center;
   }
 
-  .contact_us_green .text-blk.contactus-subhead {
-    max-width: 90%;
-  }
-
-  .contact_us_green .head-text-box {
-    display: block;
-  }
-
-  .contact_us_green .responsive-cell-block.wk-tab-12.wk-mobile-12.wk-desk-7.wk-ipadp-10.line {
-    padding-top: 0px;
-    padding-right: 20px;
-    padding-bottom: 60px;
-    padding-left: 0px;
-  }
-
   .contact_us_green .line {
-    border-right-width: initial;
-    border-right-style: none;
-    border-right-color: initial;
-    border-bottom-width: 1.8px;
-    border-bottom-style: solid;
-    border-bottom-color: #a2a2a2;
+    border-right: none;
+    border-bottom: 1.8px solid #a2a2a2;
+    padding-bottom: 40px;
   }
 
-  .contact_us_green .responsive-cell-block.wk-tab-12.wk-mobile-12.wk-desk-5.wk-ipadp-10 {
-    margin-top: 60px;
-    margin-right: 0px;
-    margin-bottom: 0px;
-    margin-left: 0px;
+  .contact_us_green .responsive-cell-block.wk-desk-5 {
+    padding-left: 0;
+    margin-top: 40px;
   }
 
-  .contact_us_green .workik-contact-bigbox {
-    display: flex;
+  /* On tablets, stack fields vertically if needed */
+  .contact_us_green .container-block.form-wrapper .responsive-container-block {
+    flex-direction: column;
   }
 
-  .contact_us_green .responsive-cell-block.wk-tab-12.wk-mobile-12.wk-desk-5.wk-ipadp-10 {
-    padding-top: 0px;
-    padding-right: 0px;
-    padding-bottom: 0px;
-    padding-left: 0px;
+  .contact_us_green .responsive-cell-block {
+    flex: 1 1 100%;
   }
 }
 
 @media (max-width: 768px) {
-  .contact_us_green
+  .contact_us_green .input,
+  .contact_us_green .textinput {
+    width: 100%;
+  }
+
+  .contact_us_green .responsive-container-block.big-container {
+    padding: 0 20px;
+  }
+
+  /* On mobile, all fields stack vertically */
+  .contact_us_green .container-block.form-wrapper .responsive-container-block {
+    flex-direction: column;
+  }
+
+  .contact_us_green .responsive-cell-block {
+    flex: 1 1 100%;
+  }
+}
