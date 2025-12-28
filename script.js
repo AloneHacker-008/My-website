@@ -93,3 +93,39 @@ function erase() {
 }
 
 type();
+
+/* CONTACT FORM AJAX SUBMISSION */
+document.getElementById('contactForm').addEventListener('submit', function(e) {
+  e.preventDefault(); // Prevent default form submission (no redirect)
+
+  const form = e.target;
+  const submitBtn = document.getElementById('submitBtn');
+  const originalText = submitBtn.textContent;
+
+  // Disable button and show loading
+  submitBtn.disabled = true;
+  submitBtn.textContent = 'Sending...';
+
+  // Prepare form data
+  const formData = new FormData(form);
+
+  // Submit via AJAX
+  fetch(form.action, {
+    method: 'POST',
+    body: formData,
+    headers: {
+      'Accept': 'application/json'
+    }
+  })
+  .then(response => {
+    if (response.ok) {
+      // Success: Reset form and show message
+      form.reset();
+      alert('Message sent successfully! Thank you for contacting me.');
+      submitBtn.textContent = originalText;
+      submitBtn.disabled = false;
+    } else {
+      // Error handling
+      response.json().then(data => {
+        if (data.errors) {
+          alert('Error: ' + data.errors.map(error => error.message
