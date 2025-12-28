@@ -153,10 +153,10 @@
     Currently pursuing my studies at
     <strong>Pt. Jawaharlal Nehru Government College</strong>.
     I enjoy building tools, exploring security concepts, and working on
-    Python-based automation and AI projects.
+    Python-based automation and AI projects.<br><br>
     I love exploring how systems work, finding vulnerabilities in a
     responsible way, and building intelligent tools that enhance
-    security and productivity. 
+    security and productivity. <br><br>
     Currently, I am focused on Python, Linux, and cybersecurity concepts,
     aiming to grow as a skilled and ethical security professional.
   </p>
@@ -173,7 +173,9 @@
 
         <!-- Contact Form -->
         <div class="responsive-cell-block wk-tab-12 wk-mobile-12 wk-desk-7 wk-ipadp-10 line">
-          <form class="form-box" action="https://formspree.io/f/meeqkvwp" method="POST">
+          <form class="form-box" id="contactForm" action="https://formspree.io/f/meeqkvwp" method="POST">
+            <!-- Hidden field to prevent redirect -->
+            <input type="hidden" name="_next" value="" />
             <div class="container-block form-wrapper">
               <div class="head-text-box">
                 <p class="text-blk contactus-head">
@@ -188,29 +190,29 @@
                 <p class="text-blk input-title">
                   FULL NAME
                 </p>
-                <input class="input" id="ijowk-6" name="FullName">
+                <input class="input" id="ijowk-6" name="FullName" required>
               </div>
               <div class="responsive-cell-block wk-desk-6 wk-ipadp-6 wk-tab-12 wk-mobile-12">
                 <p class="text-blk input-title">
                   EMAIL
                 </p>
-                <input class="input" id="ipmgh-6" name="Email">
+                <input class="input" id="ipmgh-6" name="Email" type="email" required>
               </div>
               <div class="responsive-cell-block wk-desk-6 wk-ipadp-6 wk-tab-12 wk-mobile-12">
                 <p class="text-blk input-title">
                   PHONE NUMBER
                 </p>
-                <input class="input" id="imgis-5" name="PhoneNumber">
+                <input class="input" id="imgis-5" name="PhoneNumber" type="tel">
               </div>
               <div class="responsive-cell-block wk-tab-12 wk-mobile-12 wk-desk-12 wk-ipadp-12" id="i634i-6">
                 <p class="text-blk input-title">
                   WHAT DO YOU HAVE IN MIND
                 </p>
-                <textarea class="textinput" id="i5vyy-6" name="Message" placeholder="Please enter query..."></textarea>
+                <textarea class="textinput" id="i5vyy-6" name="Message" placeholder="Please enter query..." required></textarea>
               </div>
               </div>
               <div class="btn-wrapper">
-                <button class="submit-btn" type="submit">Submit</button>
+                <button class="submit-btn" type="submit" id="submitBtn">Submit</button>
               </div>
             </div>
           </form>
