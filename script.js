@@ -69,7 +69,7 @@ function openProject(e) {
 }
 
 /* TYPEWRITER */
-const texts = ["Ethical Hacker", "Python Developer", "Cybersecurity Learner"];
+const texts = ["Ethical Hacker", "Python Developer", "Problem Solving", "Web Development"];
 let i = 0, j = 0;
 const el = document.getElementById("typing");
 
